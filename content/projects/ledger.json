@@ -1,0 +1,11 @@
+{
+  "title": "Ledger",
+  "description": "A JSON sample project, to show the local adapter also reads JSON files.",
+  "date": "Feb 2025",
+  "link": "https://example.com/ledger",
+  "image": "/placeholders/project-1.svg",
+  "imageAlt": "Placeholder preview of Ledger",
+  "mediaType": "image",
+  "tags": ["tools", "notes"],
+  "content": "Ledger is stored as `content/projects/ledger.json` instead of Markdown. The `content` field is the Markdown body.\n\nUse JSON when you would rather not keep frontmatter in the file."
+}

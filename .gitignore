@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+.npm/
+
+# Build / output
+build/
+dist/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+server.js
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# Local scratch / one-off files
+copy.tsx
+.tmp-personal-blog/
+
+# Logs & debug
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editor / IDE (keep shared settings if you need them)
+.idea/
+.vscode/
+.cursor/*
+!.cursor/rules/
+!.cursor/rules/**
+*.swp
+*.swo
+*~
+
+# Tooling caches
+.vite/
+.cache/
+.turbo/
+.vercel/
+
+# Test / playwright
+test-results/
+playwright-report/
+blob-report/
+.playwright-cli/
+output/
+
+# Misc
+*.local
+.vercel

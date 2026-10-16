@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Example Gallery",
+    "url": "https://example.com/gallery",
+    "blurb": "A fictional gallery of layout, type, and spacing references.",
+    "about": "Replace this bookmark with sites you actually return to. The default set uses example.com so the template does not point at a real person's reading list.",
+    "category": "design",
+    "kind": "Gallery",
+    "styles": ["Editorial", "Type"],
+    "tags": ["design", "reference"],
+    "cover": "/placeholders/cover.svg"
+  },
+  {
+    "name": "Sample Writing Desk",
+    "url": "https://example.com/writing",
+    "blurb": "Placeholder writing reference for essays, notes, and outlines.",
+    "about": "A stand-in for the blogs and magazines you want listed under inspirations. Edit content/inspirations.json.",
+    "category": "writing",
+    "kind": "Publication",
+    "styles": ["Essays", "Notes"],
+    "tags": ["writing"],
+    "cover": "/placeholders/project-2.svg"
+  },
+  {
+    "name": "Northwind Tools",
+    "url": "https://example.com/tools",
+    "blurb": "Imaginary tools the sample author keeps nearby while building.",
+    "about": "Use this entry as the shape for a tool bookmark: a name, a URL, a short blurb, and a longer note that opens in the modal.",
+    "category": "tools",
+    "kind": "Tool",
+    "styles": ["Utility"],
+    "tags": ["tools"],
+    "cover": "/placeholders/project-1.svg"
+  },
+  {
+    "name": "Paperweight Models",
+    "url": "https://example.com/models",
+    "blurb": "Fictional notes on small language-model workflows.",
+    "about": "Sample AI reference. Swap the URL, blurb, and cover when you personalize the site.",
+    "category": "ai",
+    "kind": "Reference",
+    "styles": ["Notes"],
+    "tags": ["ai"],
+    "cover": "/placeholders/project-3.svg"
+  },
+  {
+    "name": "Harbor Patterns",
+    "url": "https://example.com/patterns",
+    "blurb": "A pretend pattern library for interface craft.",
+    "about": "Listed under the design-engineer tab. The cover is a local SVG in public/placeholders.",
+    "category": "reference",
+    "kind": "Library",
+    "styles": ["Patterns", "UI"],
+    "tags": ["design"],
+    "cover": "/placeholders/work-2.svg"
+  }
+]

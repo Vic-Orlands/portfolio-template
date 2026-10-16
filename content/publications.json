@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Example Review",
+    "domain": "example.com",
+    "description": "Sample essays about interfaces and product engineering.",
+    "href": "https://example.com/authors/jane-doe",
+    "logo": "/placeholders/project-1.svg",
+    "logoClass": "",
+    "linkLabel": "Author archive"
+  },
+  {
+    "name": "Sample Journal",
+    "domain": "example.com",
+    "description": "Fictional magazine profile for the template.",
+    "href": "https://example.com/journal/jane-doe",
+    "logo": "/placeholders/project-2.svg",
+    "logoClass": "",
+    "linkLabel": "Writer profile"
+  },
+  {
+    "name": "Field Notes Weekly",
+    "domain": "example.com",
+    "description": "Placeholder outlet. Point this at a real publication.",
+    "href": "https://example.com/field-notes",
+    "logo": "/placeholders/cover.svg",
+    "logoClass": "",
+    "linkLabel": "Read the column"
+  }
+]

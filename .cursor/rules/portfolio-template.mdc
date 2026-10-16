@@ -1,0 +1,14 @@
+---
+description: Portfolio template structure, content locations, and data-source rules
+alwaysApply: true
+---
+
+# Portfolio template
+
+Read AGENTS.md before editing. This is a public template, not a personal site.
+
+- Sample copy lives in `content/` and `content/profile.json`. The display name, bio, writings, and publications are template data. The site URL, contact email, and social links in `content/profile.json` are the owner's real ones and should stay. `src/lib/site.ts` reads that file.
+- The homepage portrait is `src/assets/homepage-profile.png`. Every other image should be a file under `public/`.
+- Pages load content through `getContentRepository()` in `src/lib/content`. Do not import `convex/_generated` from pages. Default source is local files (`CONTENT_SOURCE=local` or unset).
+- Do not add tokens, private hostnames, deployment names, or analytics site IDs. Analytics and remote image hosts are env-only.
+- Admin (`/admin`) is optional and only for `CONTENT_SOURCE=convex` with `ADMIN_ENABLED=true`.

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-label="Paperweight">
+  <rect width="100%" height="100%" fill="#1c1917"/>
+  <rect x="48" y="48" width="1104" height="654" fill="none" stroke="#d97706" stroke-width="2"/>
+  <text x="600.0" y="359.0" text-anchor="middle" fill="#fafaf9" font-family="ui-sans-serif, system-ui, sans-serif" font-size="42">Paperweight</text>
+  <text x="600.0" y="411.0" text-anchor="middle" fill="#a8a29e" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22">Placeholder project</text>
+</svg>

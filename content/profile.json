@@ -1,0 +1,53 @@
+{
+  "name": "Jane Doe",
+  "shortName": "Jane",
+  "title": "Jane Doe — Portfolio",
+  "description": "Developer portfolio and writing template. Sample essays, projects, and interface studies by Jane Doe.",
+  "tagline": "software engineer. designer. writer.",
+  "jobTitle": "Software Engineer",
+  "keywords": [
+    "Jane Doe",
+    "Portfolio template",
+    "Software Engineer",
+    "Design Engineer",
+    "Writing"
+  ],
+  "url": "https://mezie.dev",
+  "locale": "en_US",
+  "email": "chimezieinnocent39@gmail.com",
+  "github": "https://github.com/Vic-Orlands",
+  "linkedin": "https://www.linkedin.com/in/victor-innocent",
+  "x": "https://x.com/MezieIV",
+  "twitter": "@MezieIV",
+  "introLead": "I build small, careful web products.",
+  "introBody": "This is placeholder copy for a portfolio template. Swap in your own work, writing, and links. The projects below are fictional and live on example.com.",
+  "bio": [
+    "Jane Doe is the fictional author of this template. Replace this biography, the portrait, and the links with your own.",
+    "The sample projects are invented studios and tools. They exist so the layout has something to show before you add real work."
+  ],
+  "aboutPortrait": "/placeholders/portrait.svg",
+  "locationLabel": "LOC // TEMPLATE",
+  "featured": [
+    {
+      "href": "https://example.com/northwind",
+      "title": "Northwind on example.com",
+      "label": "Northwind",
+      "image": "/placeholders/project-1.svg",
+      "imageAlt": "Placeholder preview of the Northwind project"
+    },
+    {
+      "href": "https://example.com/harbor",
+      "title": "Harbor on example.com",
+      "label": "Harbor",
+      "image": "/placeholders/project-2.svg",
+      "imageAlt": "Placeholder preview of the Harbor project"
+    },
+    {
+      "href": "https://example.com/paperweight",
+      "title": "Paperweight on example.com",
+      "label": "Paperweight",
+      "image": "/placeholders/project-3.svg",
+      "imageAlt": "Placeholder preview of the Paperweight project"
+    }
+  ]
+}

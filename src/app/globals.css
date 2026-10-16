@@ -1,0 +1,539 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url("/fonts/neue-haas-grotesk/neue-haas-grotesk-text-regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url("/fonts/neue-haas-grotesk/neue-haas-grotesk-text-italic.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url("/fonts/neue-haas-grotesk/neue-haas-grotesk-text-medium.otf")
+    format("opentype");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url("/fonts/neue-haas-grotesk/neue-haas-grotesk-text-medium-italic.otf")
+    format("opentype");
+  font-weight: 500 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url("/fonts/neue-haas-grotesk/neue-haas-grotesk-text-bold.otf")
+    format("opentype");
+  font-weight: 700 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Text";
+  src: url("/fonts/neue-haas-grotesk/neue-haas-grotesk-text-bold-italic.otf")
+    format("opentype");
+  font-weight: 700 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Neue Haas Grotesk Text", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Neue Haas Grotesk Text", "Helvetica Neue", Arial, sans-serif;
+  --font-editorial: var(--font-instrument-serif), Georgia, "Times New Roman", serif;
+  --font-monument: "Neue Haas Grotesk Text", "Helvetica Neue", Arial, sans-serif;
+}
+
+@theme inline {
+  --font-instrument: var(--font-instrument-serif), "Instrument Serif", serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+}
+
+@variant dark (&:where(.dark, .dark *));
+
+.font-jakarta {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.scribble-interaction-demo {
+  color-scheme: dark;
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --primary: oklch(0.922 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+}
+
+/* Theme color transitions only when the user toggles — avoids nav flash */
+html.theme-ready body {
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* Shared utility — hide scrollbars without losing scroll */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+html.system-theme body {
+  background-color: #18181c !important;
+  background-image:
+    linear-gradient(rgb(15 15 17 / 90%), rgb(15 15 17 / 93%)),
+    url("/bleach.webp") !important;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply, luminosity;
+}
+
+html.system-theme [data-theme-surface] {
+  background-color: transparent !important;
+}
+
+.article-breakout {
+  position: relative;
+  left: 50%;
+  width: min(calc(100% + 5rem), calc(100vw - 3rem));
+  transform: translateX(-50%);
+}
+
+/* Project notes sit on an 80% canvas; prose is narrower while media fills it. */
+.project-notes-markdown .markdown-body > :not(.article-breakout) {
+  width: 93.75%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-notes-markdown .markdown-body > .article-breakout {
+  left: auto;
+  width: 100%;
+  transform: none;
+}
+
+@media (max-width: 1023px) {
+  .project-notes-markdown .markdown-body > :not(.article-breakout) {
+    width: 100%;
+  }
+}
+
+:root {
+  --text-swap-dur: 200ms;
+  --text-swap-translate-y: 8px;
+  --text-swap-blur: 2px;
+  --text-swap-ease: ease-out;
+  --modal-open-dur: 250ms;
+  --modal-close-dur: 150ms;
+  --modal-scale: 0.96;
+  --modal-scale-close: 0.96;
+  --modal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.t-text-swap {
+  display: inline-block;
+  transform: translateY(0);
+  filter: blur(0);
+  opacity: 1;
+  transition:
+    transform var(--text-swap-dur) var(--text-swap-ease),
+    filter var(--text-swap-dur) var(--text-swap-ease),
+    opacity var(--text-swap-dur) var(--text-swap-ease);
+  will-change: transform, filter, opacity;
+}
+
+.t-text-swap.is-exit {
+  transform: translateY(calc(var(--text-swap-translate-y) * -1));
+  filter: blur(var(--text-swap-blur));
+  opacity: 0;
+}
+
+.t-text-swap.is-enter-start {
+  transform: translateY(var(--text-swap-translate-y));
+  filter: blur(var(--text-swap-blur));
+  opacity: 0;
+  transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t-text-swap {
+    transition: none !important;
+  }
+}
+
+.t-modal {
+  transform-origin: center;
+  transform: scale(var(--modal-scale));
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--modal-open-dur) var(--modal-ease),
+    opacity var(--modal-open-dur) var(--modal-ease);
+  will-change: transform, opacity;
+}
+.t-modal.is-open {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+.t-modal.is-closing {
+  transform: scale(var(--modal-scale-close));
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    transform var(--modal-close-dur) var(--modal-ease),
+    opacity var(--modal-close-dur) var(--modal-ease);
+}
+
+.scribble-modal-backdrop {
+  opacity: 0;
+  transition: opacity var(--modal-open-dur) var(--modal-ease);
+}
+
+.scribble-modal-backdrop[data-state="open"] {
+  opacity: 1;
+}
+
+.scribble-modal-backdrop[data-state="closing"] {
+  opacity: 0;
+  transition-duration: var(--modal-close-dur);
+}
+
+.scribble-modal .article-breakout {
+  left: auto;
+  width: 100%;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t-modal {
+    transition: none !important;
+  }
+  .scribble-modal-backdrop {
+    transition: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Inspiration modal — View Transitions between selected items */
+@supports (view-transition-name: none) {
+  ::view-transition-old(insp-name),
+  ::view-transition-new(insp-name),
+  ::view-transition-old(insp-about),
+  ::view-transition-new(insp-about),
+  ::view-transition-old(insp-meta),
+  ::view-transition-new(insp-meta),
+  ::view-transition-old(insp-cover),
+  ::view-transition-new(insp-cover),
+  ::view-transition-old(insp-kind),
+  ::view-transition-new(insp-kind) {
+    animation-duration: 0.38s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    height: 100%;
+    overflow: clip;
+  }
+
+  ::view-transition-old(insp-name),
+  ::view-transition-old(insp-about),
+  ::view-transition-old(insp-meta),
+  ::view-transition-old(insp-kind) {
+    animation-name: insp-vt-fade-out;
+  }
+
+  ::view-transition-new(insp-name),
+  ::view-transition-new(insp-about),
+  ::view-transition-new(insp-meta),
+  ::view-transition-new(insp-kind) {
+    animation-name: insp-vt-fade-in;
+  }
+
+  ::view-transition-old(insp-cover) {
+    animation-name: insp-vt-cover-out;
+  }
+
+  ::view-transition-new(insp-cover) {
+    animation-name: insp-vt-cover-in;
+  }
+}
+
+@keyframes insp-vt-fade-out {
+  to {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes insp-vt-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(8px);
+  }
+}
+
+@keyframes insp-vt-cover-out {
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes insp-vt-cover-in {
+  from {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+}
+
+:root {
+  --vt-shared: 280ms;
+  --vt-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-group(root) {
+  animation: none;
+}
+
+::view-transition-old(root) {
+  animation: none;
+}
+
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-old(.page-fade) {
+  animation: 110ms ease-out both page-fade-out;
+}
+
+::view-transition-new(.page-fade) {
+  animation: 180ms var(--vt-ease) both page-fade-in;
+}
+
+::view-transition-old(.nav-forward) {
+  animation: 150ms ease-out both page-slide-out-left;
+}
+
+::view-transition-new(.nav-forward) {
+  animation: 220ms var(--vt-ease) both page-slide-in-right;
+}
+
+::view-transition-old(.nav-back) {
+  animation: 150ms ease-out both page-slide-out-right;
+}
+
+::view-transition-new(.nav-back) {
+  animation: 220ms var(--vt-ease) both page-slide-in-left;
+}
+
+::view-transition-group(.writing-forward),
+::view-transition-group(.writing-back) {
+  animation-duration: 220ms;
+  animation-timing-function: var(--vt-ease);
+  overflow: clip;
+}
+
+::view-transition-old(.writing-forward),
+::view-transition-old(.writing-back),
+::view-transition-new(.writing-forward),
+::view-transition-new(.writing-back) {
+  backface-visibility: hidden;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(.writing-forward) {
+  animation: 140ms ease-out both writing-exit-left;
+}
+
+::view-transition-new(.writing-forward) {
+  animation: 220ms var(--vt-ease) both writing-enter-right;
+}
+
+::view-transition-old(.writing-back) {
+  animation: 140ms ease-out both writing-exit-right;
+}
+
+::view-transition-new(.writing-back) {
+  animation: 220ms var(--vt-ease) both writing-enter-left;
+}
+
+/* Hash landings (e.g. Projects → home) — no crossfade/slide flicker */
+::view-transition-old(.instant),
+::view-transition-new(.instant) {
+  animation: none !important;
+}
+
+@keyframes page-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes page-slide-out-left {
+  to {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+}
+
+@keyframes page-slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+
+@keyframes page-slide-out-right {
+  to {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+}
+
+@keyframes page-slide-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-16px);
+  }
+}
+
+@keyframes writing-exit-left {
+  to {
+    opacity: 0;
+    transform: translateX(-6px);
+  }
+}
+
+@keyframes writing-enter-right {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+}
+
+@keyframes writing-exit-right {
+  to {
+    opacity: 0;
+    transform: translateX(6px);
+  }
+}
+
+@keyframes writing-enter-left {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+}
+
+::view-transition-group(.morph) {
+  animation-duration: var(--vt-shared);
+  animation-timing-function: var(--vt-ease);
+}
+
+::view-transition-image-pair(.morph) {
+  isolation: auto;
+}
+
+::view-transition-old(.morph),
+::view-transition-new(.morph) {
+  mix-blend-mode: normal;
+}
+
+::view-transition-group(site-identity),
+::view-transition-group(site-social-links),
+::view-transition-group(side-navigation) {
+  animation-duration: var(--vt-shared);
+  animation-timing-function: var(--vt-ease);
+  z-index: 100;
+}
+
+::view-transition-old(site-identity),
+::view-transition-old(site-social-links),
+::view-transition-old(side-navigation) {
+  display: none;
+}
+
+::view-transition-new(site-identity),
+::view-transition-new(site-social-links),
+::view-transition-new(side-navigation) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}

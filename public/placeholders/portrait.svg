@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" role="img" aria-label="Jane Doe">
+  <rect width="100%" height="100%" fill="#1c1917"/>
+  <rect x="48" y="48" width="704" height="904" fill="none" stroke="#d97706" stroke-width="2"/>
+  <text x="400.0" y="484.0" text-anchor="middle" fill="#fafaf9" font-family="ui-sans-serif, system-ui, sans-serif" font-size="42">Jane Doe</text>
+  <text x="400.0" y="536.0" text-anchor="middle" fill="#a8a29e" font-family="ui-sans-serif, system-ui, sans-serif" font-size="22">Replace this portrait</text>
+</svg>
